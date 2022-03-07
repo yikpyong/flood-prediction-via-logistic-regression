@@ -1,5 +1,3 @@
-# flood-prediction-via-logistic-regression
-
 # Flood Prediction Based on Historical Weather Information and Flood Records By Using Logistic Regression Based on real weather and flood related data of Selangor State, Malaysia from 2013 to 2021 
 
 
