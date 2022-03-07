@@ -9,6 +9,7 @@
 # 1.1.	Malaysia Geography and Weather
 
   Malaysia is a country of Southeast Asia, lying on few degrees north of the Equator. It is separated by the South China Sea into two parts, Peninsular Malaysia at the west and Borneo's East Malaysia at the east, each occupies 40% and 60% of the total area respectively. Malaysia does not have four seasons like South Korea. Its tropical weather happens all year round with sunny skies and humid rain falls. As a tropical country, the temperatures fluctuate between 23 and 32 degrees during the year and the average rainfall is 2540mm annually. [1]
+  
   Malaysia always suffers from two monsoon winds seasons, the Southwest Monsoon from May to September, and the Northeast Monsoon from October to March as shown in Figure 1. The weather usually is very rough in these months. There are some tropical islands even not allowing tourists to enter during the monsoon period. During the monsoon period, it can sometimes rain for days continuously. The Northeast Monsoon causes more rainfall than the Southwest Monsoon because the Peninsular Malaysia is partly protected by Sumatera Island from the Southwest Monsoon. Yet, floods are still a regular natural disaster in Malaysia which happen nearly every year especially during the monsoon season. 
  
 # 1.2.	Flood in Malaysia
