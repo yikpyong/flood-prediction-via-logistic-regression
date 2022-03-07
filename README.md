@@ -1,65 +1,20 @@
 # flood-prediction-via-logistic-regression
-Flood Prediction Based on Historical Weather Information and Flood Records 
-By Using Logistic Regression 
-Based on real weather and flood related data of 
-Selangor State, Malaysia from 2013 to 2021 
+
+# Flood Prediction Based on Historical Weather Information and Flood Records
+# By Using Logistic Regression 
+# Based on real weather and flood related data of 
+# Selangor State, Malaysia from 2013 to 2021 
 
 
 
+# 1.	INTRODUCTION
 
-
-Course: Big Data and Water Resources Monitoring (RES5003-41)
-Professor: Professor Choi Min-ha
-Project: Final Term Project
-Submission Data: 8 December 2021
-
-
-
-
-
-
-
-
- 
-CONTENT
-
-INTRODUCTION ---------------------------------------------------------------------------------------------------- pg. 2 to 5
-	Malaysia Geography and Weather
-	Flood in Malaysia
-	Research Field
-
-APPLICATION OF BIG DATA IN FLOOD MONITORING ----------------------------------------------------- pg.6 to 9
-	Data Sources
-	Data Visualization
-
-FLOOD PREDICTION USING LOGISTIC REGRESSION ---------------------------------------------------- pg.10 to 14
-	Introduction of Logistic Regression
-	Research Procedures and Results
-
-CONCLUSION------------------------------------------------------------------------------------------------------------ pg.15
-
-REFERENCE-------------------------------------------------------------------------------------------------------------- pg.16
-
-
-
-
-
-
-
-
-
-
-
-
- 
-1.	INTRODUCTION
-
-1.1.	Malaysia Geography and Weather
+# 1.1.	Malaysia Geography and Weather
 
 Malaysia is a country of Southeast Asia, lying on few degrees north of the Equator. It is separated by the South China Sea into two parts, Peninsular Malaysia at the west and Borneo's East Malaysia at the east, each occupies 40% and 60% of the total area respectively. Malaysia does not have four seasons like South Korea. Its tropical weather happens all year round with sunny skies and humid rain falls. As a tropical country, the temperatures fluctuate between 23 and 32 degrees during the year and the average rainfall is 2540mm annually. [1]
 Malaysia always suffers from two monsoon winds seasons, the Southwest Monsoon from May to September, and the Northeast Monsoon from October to March as shown in Figure 1. The weather usually is very rough in these months. There are some tropical islands even not allowing tourists to enter during the monsoon period. During the monsoon period, it can sometimes rain for days continuously. The Northeast Monsoon causes more rainfall than the Southwest Monsoon because the Peninsular Malaysia is partly protected by Sumatera Island from the Southwest Monsoon. Yet, floods are still a regular natural disaster in Malaysia which happen nearly every year especially during the monsoon season. 
  
-1.2.	Flood in Malaysia
+# 1.2.	Flood in Malaysia
 
 Malaysia is mostly surrounded by sea, and there is total of 189 river basins, with the main channels flowing directly to the South China Sea and 85 of them are prone to become recurrent flooding. The estimated area vulnerable to flood disaster is approximately 29,800 km2 or 9% of the total Malaysia area and is affecting almost 4.82 million people which is around 22% of the total population of the country. [2]
 There are several causes which lead to floods in Malaysia. 
@@ -70,7 +25,7 @@ There are several causes which lead to floods in Malaysia.
 Duties of Department of Irrigation and Drainage under Ministry of Environment and Water Malaysia are management of river basin and coastal zone, water resources and hydrology management, flood management, and eco-friendly drainage. They have a platform called as “InfoBanjir” (English translation: Flood Info) which provide water level and rainfall notification to residents throughout Malaysia. Via this platform, people can check the flood casting warning up to following three days. Figure 2 shows the main page of the official website, where the location of water level station and rainfall station are labelled 
 In addition, the Department of Irrigation and Drainage in each state also provide the local “InfoBanjir” and geographic information system (GIS) to residents. Through these two platforms, the residents can even look at the map to check the location where a flood is happening or expected to happen. 
 
-1.3.	Research Field
+# 1.3.	Research Field
 
 In this research, the relationship between historical weather information and the occurrence of floods is investigated. Instead of the whole Malaysia, the Klang District, Selangor State of Malaysia is set as the research target. Klang, officially Royal Town of Klang, is a royal town and former capital of the state of Selangor, Malaysia. Klang is divided into North Klang and South Klang, which are separated by the Klang River. Klang has a tropical monsoon climate with heavy rainfall year-round, especially on March, April, October, November, and December. The total rainfall in these months is usually over 200mm and this has caused floods in Klang District frequently. 
 There are 413 rivers gazetted in Selangor, and the main river, of course, is Klang river. The Klang river flows through Klang Valley, which is a heavily populated area of more than four million people. Nowadays, heavy development has narrowed certain stretches of the river to the point that it resembles a large storm drain in some places. This contributes to flash floods usually after heavy rain. Figure 3 shows all the rivers in Klang District, Selangor.  
@@ -79,23 +34,31 @@ This historical record of floods that occurred in every district of Selangor Sta
 Figure 4 JPSSelGIS Platform by GIS Data Centre Selangor [4]
 Besides the flood records, the weather information includes temperature, humidity, cloud coverage percentage, air pressure, and rainfall depth are also important in this research to be used in predicting the flood occurrence. As the historical weather information of Malaysia is not provided by government to community for free, therefore, the weather information which is recorded at “World Weather Online” is scraped by using web scraping method. 
 These two data are then combined according to the dates to find out the relationship between weather information and flood occurrence. In this study, the method that is used to predict the occurrence of flood is logistic regression, which will be explained in detail in the following sections.  
-2.	APPLICATION OF BIG DATA IN FLOOD MONITORING
 
-2.1.	DATA SOURCES
+
+
+# 2.	APPLICATION OF BIG DATA IN FLOOD MONITORING
+
+# 2.1.	DATA SOURCES
 
 First, the flood records of Selangor State can be found on “JPSSelGIS” platform. Every flood occurred from year 2013 to October 2021 is recorded in table by year. Among the criteria are date, time, location, longitude, latitude, water level of river involved, duration of flood, area of flood, depth of rain, etc. However, the data is only in Malay language, which is not foreigner friendly. The data is then copied to a Microsoft Excel file for further use. Figure 5 shows the example of flood records of Selangor State in year 2021 while Figure 6 refers to the data sheet which the data is transferred from the “JPSSelGIS” platform. The highlighted rows represent the flood records of Klang District, Selangor State. 
 
 After getting the flood records of Klang District, the historical weather information is obtained from “World Weather Online” — a weather forecasts platform for worldwide locations. Ministry of Environment and Water Malaysia does not provide the historical weather information for free, and the free database provided by Department of Statistic Malaysia is not complete enough for the purpose of this study. Therefore, web scraping technique is used to extract the historical weather information of Klang District, Selangor State on the “World Weather Online” website. Because only the flood records of Selangor from 2013 to 2021 are available, the historical weather data from 1st January 2013 to 27th November 2021 are scraped and transferred to a Microsoft Excel file too. Figure 7 shows the weather data sample of Klang, Selangor on 1st January 2013. The date, time, temperature, rain, humidity, cloud, and pressure are scraped. Figure 8 shows the Excel file of the scraped data. The weather data of one whole day at interval 3 hours is recorded.
-2.2.	DATA VISUAIZATION
+
+# 2.2.	DATA VISUAIZATION
 
 To provide interactive visualizations of flood data with clearly shown location information, Microsoft Power BI is used. A dashboard is created as shown in Figure 9 (a) and (b) to let the users check the location of floods by year, by month, or by district. Figure 9 (b) is the interface when the flood records of Klang area is specified to be mentioned. The size of the circle refers to the amount of rainfall, while each colour represents different district as well. From the dashboard, the users can easily get know the popular flood risk areas. In 2020, Klang is the region with highest cases of floods, followed by Gombak and Hulu Langat District. The month with highest cases of floods is April, which is in the middle of Southwest Monsoon.  
 Besides, the Microsoft Power BI was also used to visualize the weather information of Klang District and to find out the relationship between occurrence of floods and the weather. The dashboard users can choose the data of a specific year and month, or even day to be visualised. The top graph shows the sum of rainfall by month, while the bottom graph shows the average of the total rainfall by day in a month. On the right side of the dashboard, the upper box shows how the rainfall will affect the coverage area of cloud, temperature, and humidity. While the bottom box is the summary of the dashboard which is generated automatically according to what the user is viewing. Figure 10 (a) is the dashboard summarizing the historical weather data of Klang District from 2013 to 2021. From the summary report, we can notice that the rainfall in November is the highest, followed by December, January, and April. Coverage area of cloud is most influential to the rainfall, followed by temperature and humidity. While the Figure 10 (b) shows the dashboard about the weather information on April 2020. 
-3.	FLOOD PREDICTION USING LOGISTIC REGRESSION
+
+
+
+# 3.	FLOOD PREDICTION USING LOGISTIC REGRESSION
 
 3.1.	Introduction of Logistic Regression
 
 In statistics, the logistic model is mainly used to find out the probability of a certain class or event existing such as pass or fail, win or lose, and other issues with positive and negative outcomes. Logistic regression is used to obtain odds ratio in the presence of more than one explanatory variable. The procedure is quite similar to multiple linear regression, with the exception that the response variable is binomial. The result is the impact of each variable on the odds ratio of the observed event of interest. The main advantage is to avoid confounding effects by analysing the association of all variables together. [6] In deep learning, this even can be extended to differentiate several classes of events such as determining whether an image contains a specific object such as an apple, a dog, a human, etc. Each object being detected in the image would be assigned a probability between 0 and 1, with a sum of one. In the logistic model, the log-odds for the value labelled "1" is a linear combination of one or more independent variables ("predictors"); the independent variables can each be a binary variable (two classes, coded by an indicator variable) or a continuous variable (any real value). The corresponding probability of the value labelled "1" can vary between 0 and 1, hence the labelling; the function that converts log-odds to probability is the logistic function, hence the name. Figure 11 shows the graphs of linear regression and logistic regression. 
-3.2.	Research Procedures and Results
+
+# 3.2.	Research Procedures and Results
 
 As mentioned above, the historical weather information and flood records of Klang District, Selangor State from year 2013 to 2021 are used to make a flood prediction model. First of all, the average value of temperature, depth of rain, humidity, coverage area of clouds is calculated. Then, with matching to the date respectively, a new column is added to the Excel file with the title “Occurance (1:YES; 0:NO)”. “1” is given when flood is present, while ‘0’ means there is no flood recorded in the day. The Excel file is then uploaded to Google Collaboratory and opened using the Pandas library. Figure 12 shows the code of reading the Excel file, while Figure 13 shows the data being read by Pandas. 
 There are 3252 rows of data. Since the main purpose of this study is not to evaluate the performance of prediction model itself, but to make a usable flood prediction model based on the historical data, all the rows are used for training the model, and half of the data as test and validation data. All the values are then normalized to make the interpretation of the model easier by looking at its weights. 
